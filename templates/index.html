@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Scanner</title>
+
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>CVAnalyzer</h1>
+            <p>Optimize your CV for job applications</p>
+        </div>
+    </header>
+    
+    <nav>
+        <a href="#" id="nav-home">Home</a>
+        <a href="#" id="nav-upload">Upload CV</a>
+        <a href="#" id="nav-analyze">Analyze</a>
+        <a href="#" id="nav-history">History</a>
+        <a href="#" id="login-btn">Login</a>
+    </nav>
+    
+    <div class="container">
+        <main>
+            <!-- Home Section -->
+            <section id="home-section" class="section">
+                <h2>Enhance Your Job Applications</h2>
+                <p>Our CV Scanner helps you optimize your resume for specific job descriptions. Follow these steps:</p>
+                <ol>
+                    <li>Upload your CV</li>
+                    <li>Enter or paste the job description</li>
+                    <li>Get detailed analysis and improvement suggestions</li>
+                    <li>Download your improved CV</li>
+                </ol>
+                <div style="text-align: center; margin-top: 30px;">
+                    <button id="get-started-btn">Get Started</button>
+                </div>
+            </section>
+            
+            <!-- Upload CV Section -->
+            <section id="upload-section"  class="section hidden">
+                <h2>Upload Your CV</h2>
+                <form id="cv-upload-form" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="cv-file">Choose CV File (PDF, DOCX)</label>
+                        <input type="file" id="cv-file" name="cv" accept=".pdf,.docx,.doc">
+                    </div>
+                    <button type="submit">Upload</button>
+                </form>
+                <div id="upload-result" class="hidden">
+                    <h3>Upload Successful!</h3>
+                    <p>Your CV has been uploaded. You can now analyze it against a job description.</p>
+                    <button id="go-to-analyze-btn">Continue to Analysis</button>
+                </div>
+            </section>
+            
+            <!-- Analyze Section -->
+            <section id="analyze-section" class="section hidden">
+                <h2>Analyze Your CV</h2>
+                <div class="form-group">
+                    <label for="cv-select">Select Your CV</label>
+                    <select id="cv-select">
+                        <option value="">-- Select your CV --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="job-description">Enter Job Description</label>
+                    <textarea id="job-description" placeholder="Paste the job description here..."></textarea>
+                </div>
+                <button id="analyze-btn">Analyze CV</button>
+                <div id="analysis-loading" class="hidden">
+                    <p>Analyzing your CV... This may take a moment.</p>
+                </div>
+            </section>
+            
+            <!-- Results Section -->
+            <section id="results-section" class="section hidden">
+                <h2>Analysis Results</h2>
+                <div class="result-card">
+                    <h3>Match Score</h3>
+                    <div class="score" id="match-score">85</div>
+                    
+                    <div class="tab-container">
+                        <div class="tab-buttons">
+                            <button class="tab-button active" data-tab="feedback">Feedback</button>
+                            <button class="tab-button" data-tab="suggestions">Suggestions</button>
+                            <button class="tab-button" data-tab="improved-cv">Improved CV</button>
+                        </div>
+                        
+                        <div id="feedback-tab" class="tab-content active">
+                            <div id="feedback-content"></div>
+                        </div>
+                        
+                        <div id="suggestions-tab" class="tab-content">
+                            <ul id="suggestions-list"></ul>
+                        </div>
+                        
+                        <div id="improved-cv-tab" class="tab-content">
+                            <div id="improved-cv-content"></div>
+                            <button id="download-cv-btn">Download Improved CV</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- History Section -->
+            <section id="history-section" class="section hidden">
+                <h2>Your Analysis History</h2>
+                <div id="history-list">
+                    <!-- History items will be added here -->
+                </div>
+            </section>
+            
+            <!-- Login/Register Section -->
+            <section id="login-section" class="section hidden">
+                <h2>Login or Register</h2>
+                <div class="tab-container">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" data-tab="login-form">Login</button>
+                        <button class="tab-button" data-tab="register-form">Register</button>
+                    </div>
+                    
+                    <div id="login-form-tab" class="tab-content active">
+                        <form id="login-form">
+                            <div class="form-group">
+                                <label for="login-email">Email</label>
+                                <input type="email" id="login-email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="login-password">Password</label>
+                                <input type="password" id="login-password" required>
+                            </div>
+                            <button type="submit">Login</button>
+                        </form>
+                    </div>
+                    
+                    <div id="register-form-tab" class="tab-content">
+                        <form id="register-form">
+                            <div class="form-group">
+                                <label for="register-email">Email</label>
+                                <input type="email" id="register-email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="register-password">Password</label>
+                                <input type="password" id="register-password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="register-confirm-password">Confirm Password</label>
+                                <input type="password" id="register-confirm-password" required>
+                            </div>
+                            <button type="submit">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Ashutosh. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script src="../static/script.js"></script>
+</body>
+</html>

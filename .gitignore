@@ -1,0 +1,19 @@
+# Ignore Python virtual environments
+venv/
+venv311/
+
+# Ignore upload directory
+uploads/
+
+# Ignore database file
+cv_scanner.db
+
+# Ignore log files
+*.log
+
+# Bytecode and cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db-journal
